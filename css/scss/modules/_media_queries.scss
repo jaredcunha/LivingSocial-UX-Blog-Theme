@@ -1,0 +1,11 @@
+@mixin respond-to($media) {
+  @if $media == expansionA {
+    @media only screen and (min-width: 40em) { @content; }
+  }
+  @if $media == expansionB {
+    @media only screen and (min-width: 55em) { @content; }
+  }
+  @else if $media == expansionMax {
+    @media only screen and (min-width: 90em) { @content; }
+  }
+}

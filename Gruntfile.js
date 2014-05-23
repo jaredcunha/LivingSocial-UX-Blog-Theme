@@ -31,6 +31,34 @@ module.exports = function(grunt) {
             }
         },
 
+        watch: {
+            options: {
+                livereload: true,
+            },
+            css: {
+                files: 'css/scss/global.scss',
+                tasks: ['sass'],
+                options: {
+                    spawn: false,
+                }
+            }, 
+            scripts: {
+                files: ['js/*.js'],
+                tasks: ['concat', 'uglify'],
+                options: {
+                    spawn: false,
+                },
+            },
+
+            images: {
+                files: ['images/**/*.{png,jpg,gif}', 'images/*.{png,jpg,gif}'],
+                tasks: ['imagemin'],
+                options: {
+                  spawn: false,
+                }
+            }    
+        },
+
         sass: {
             dist: {
                 options: {
@@ -40,24 +68,9 @@ module.exports = function(grunt) {
                     'css/build/global.css': 'css/scss/global.scss'
                 }
             } 
-        },
-
-        watch: {
-            scripts: {
-                files: ['js/*.js'],
-                tasks: ['concat', 'uglify'],
-                options: {
-                    spawn: false,
-                },
-            },
-            css: {
-                files: ['css/*.scss'],
-                tasks: ['sass'],
-                options: {
-                    spawn: false,
-                }
-            } 
         }
+
+        
 
     });
 
@@ -69,6 +82,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
-    grunt.registerTask('default', ['imagemin', 'watch']);
+    grunt.registerTask('default', ['watch']);
 
 };
