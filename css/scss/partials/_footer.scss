@@ -1,2 +1,71 @@
 @import "bourbon/bourbon";
 @import "modules/all";
+
+/* 
+=============================================================================
+MAIN FOOTER
+========================================================================== */
+.site-footer {
+	@include rem_units(padding, 2, 0);
+	background: $spice;
+	color: #fff;
+	@include respond-to(expansionA) {
+		@include rem_units(padding, 2.8, 0)
+	}
+	@include respond-to(expansionB) {
+		@include rem_units(padding, 3.6, 0)
+	}
+	.action-buttons {
+		@include rem_units(font-size, 1.4);
+	}
+}
+
+.footer-cols {
+	@include clearfix;
+	.col {
+		@include rem_units(margin-bottom, 3);
+		@include respond-to(expansionA) {
+			width: $grid_4of12cols + $gutterWidth;
+			float: left;
+			margin-left: $grid_1of12cols;
+		}
+		&:first-child {
+			margin-left: 0;
+		}
+		&.col-sm {
+			@include respond-to(expansionA) {
+				width: $grid_2of12cols + $gutterWidth;
+			}
+		}
+	}
+	h4 {
+		@include rem_units(font-size, 1.4);
+		@include rem_units(padding-bottom, 1);
+		@include rem_units(margin-bottom, 1.25);
+		border-bottom: 1px solid;
+		text-transform: uppercase;
+	}
+	ul {
+		@include clearfix;
+		&> li {
+			@include rem_units(margin-bottom, 1);
+			@include respond-to(expansionB) {
+				float: left;
+				width: 50%;
+				.col-sm + & + & + & {
+					font-size: 200px;
+				}
+			}
+			a {
+				color: #fff;
+				@include rem_units(font-size, 1.4);
+			}
+		}
+	}		
+}
+
+.site-info {
+	@include rem_units(font-size, 1.4);
+	@include rem_units(margin, 5, 0, 0);
+	color: $white_with_alpha;
+}

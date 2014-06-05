@@ -1,0 +1,282 @@
+@import "bourbon/bourbon";
+@import "modules/all";
+
+/* 
+=============================================================================
+FULL BLOG POST
+========================================================================== */
+.blog-post-full {
+	@include clearfix;
+}
+
+.post-main {
+	@include respond-to(expansionB) {
+		float: right;
+		width: $grid_10of12cols + $gutterWidth;
+		padding-left: $gutterWidth * 2;
+		padding-right: $gutterWidth;
+		border-left: 1px solid $border_grey;
+		position: relative;
+	}
+	&:after {
+		@include respond-to(expansionB) {
+			@include rem_units(width, 1);
+			@include rem_units(left, -1);
+			content: "";
+			display: block;
+			height: 1px;
+			border-top: 1px solid $border_grey;
+			position: absolute;
+			bottom: -1px;
+		}
+	}
+}
+
+/*Post Supplements*/
+.post-supplement {
+	@include respond-to(expansionB) {
+		float: left;
+		width: $grid_2of12cols;
+	}
+	.supplement {
+		@include rem_units(padding-top, 2);
+		@include rem_units(padding-bottom, 2);
+		@include respond-to(expansionB) {
+			padding-right: $gutterWidth;
+		}
+		&:first-child {
+			@include respond-to(expansionB) {
+				border-bottom: 1px solid $border_grey;
+			}
+		}
+	}
+	h6 {
+		@include rem_units(font-size, 1.2);
+		@include rem_units(margin-bottom, 1);
+		color: $small_heading_color;
+	}
+}
+
+/* 
+=============================================================================
+TITLES
+========================================================================== */
+.post-title {
+	@include rem_units(font-size, 2.7);
+	@include rem_units(margin-bottom, 2.7);
+	font-family: $serif;
+	a {
+		color: $whale;
+	}
+}
+
+/* 
+=============================================================================
+POST CONTENT
+========================================================================== */
+.post-content {
+	@include rem_units(font-size, 1.5);
+	line-height: 1.5;
+	color: $body_copy_color;
+	@include respond-to(expansionA) {
+		@include rem_units(font-size, 1.6);
+	}
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@include rem_units(margin, 2.25, 0);
+		font-family: $serif;
+		line-height: 1.25;
+		color: $body_headings_color;
+	}
+	p {
+		@include rem_units(margin-bottom, 1.25);
+	}
+	img {
+		@include image_box_shadow;
+		display: block;
+		width: 100%;
+		border: 8px solid #fff;
+	}
+}
+
+.more-link {
+	@include rem_units(margin-top, 1.25);
+	display: block;
+}
+
+/* 
+=============================================================================
+POST CATEGORIES
+========================================================================== */
+.post-categories {
+	&> li {
+		@include rem_units(margin-bottom, .5);
+		@include rem_units(font-size, 1.5);
+		display: block;
+	}
+}
+
+/* 
+=============================================================================
+WHEN ITEMS APPEAR IN A FEED
+========================================================================== */
+.blogs-list {
+	.blog-post-item {
+		@include rem_units(margin-top, 2.5);
+		@include rem_units(padding-top, 2.5);
+		border-top: 1px solid $border_grey;
+		&:first-child {
+			margin-top: 0;
+			padding-top: 0;
+			border-top: none;
+		}
+		@include respond-to(expansionB) {
+			@include rem_units(margin-top, 8);
+			padding-top: 0;
+			border-top: none;
+		}
+	}
+	.post-main {
+		@include respond-to(expansionB) {
+			width: $grid_9of12cols;
+			padding-right: 0;
+			padding-left: $gutterWidth;
+			min-height: 275px;
+		}
+	}
+	.post-supplement {
+		@include respond-to(expansionB) {
+			width: $grid_3of12cols + $gutterWidth;
+		}
+	}
+	.post-categories > li {
+		@include rem_units(margin-left, .5);
+		display: inline-block;
+		&:first-child {
+			margin-left: 0;
+		}
+	}
+}
+
+/* 
+=============================================================================
+BYLINE AND TIMESTAMPS
+========================================================================== */
+.pub-info {
+	@include clearfix;
+	.pub-date {
+		@include rem_units(font-size, 1.5);
+		@include rem_units(margin-bottom, .7);
+		font-family: $serif;
+		color: $headings_light;
+	}
+	.avatar {
+		@include rem_units(margin-right, 1.7);
+		@include image_box_shadow;
+		float: left;
+	}
+	.byline {
+		@include rem_units(font-size, 1.4);
+	}
+	&.with-avatar .pub-date {
+		@include rem_units(padding-top, 1.6);
+	}
+}
+
+.post-main .pub-info {
+	@include rem_units(margin-bottom, 3.5);
+}
+
+/* User photo */ 
+.avatar {
+	display: block;
+	border-radius: 50%;
+	border: 3px solid white;	
+}
+
+/* 
+=============================================================================
+BYLINE AND TIMESTAMPS
+========================================================================== */
+.author-profile {
+	@include rem_units(padding, 5.2, 0);
+	background: white;
+	border-bottom: 1px solid $border_grey;
+}
+
+.author-profile-content {
+	@include clearfix;
+	.main {
+		float: right;
+		width: $grid_9of12cols - $gutterWidth;
+	}
+	.secondary {
+		@include clearfix;
+		float: left;
+		width: $grid_3of12cols + $gutterWidth;
+		
+	}
+	.avatar {
+		float: right;
+		width: 80%;
+		height: auto;
+		max-width: 110px;
+		@include respond-to(expansionA) {
+			width: auto;
+		}
+	}
+	.description {
+		@include rem_units(font-size, 1.6);
+		@include rem_units(margin-bottom, 2.2);
+		line-height: 1.5;
+		color: $body_copy_color;
+	}
+	.author-title {
+		@include rem_units(margin-bottom, 2.2);
+		font-family: $serif;
+		span {
+			@include rem_units(font-size, 1.4);
+			display: block;
+			font-family: $sans-serif;
+			color: $body_copy_color_light;
+		}
+		.job-title {
+			@include respond-to(expansionA) {
+				@include rem_units(padding-left, 1.4);
+				display: inline;
+			}
+		}
+	}
+	.social-links > li {
+		@include rem-units(margin-right, 2);
+	}
+}
+
+/* 
+=============================================================================
+POST FEATURED IMAGE
+========================================================================== */
+.post-featured-image {
+	display: block;
+	width: 100%;
+	height: auto;
+	border-bottom: 1px solid $border_grey;
+	&+.main-content {
+		padding-top: 0;
+		.post-main,
+		.post-supplement {
+			@include rem-units(padding-top, 7.5);
+		}
+	}
+}
+
+/* 
+=============================================================================
+COMMENTS 
+========================================================================== */
+.comments {
+	@include rem_units(padding-top, 8);
+}

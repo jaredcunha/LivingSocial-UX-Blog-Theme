@@ -1,0 +1,161 @@
+@import "bourbon/bourbon";
+@import "modules/all";
+
+/* 
+=============================================================================
+BASE ELEMENTS
+========================================================================== */
+body {
+	background: $background_grey;
+	font-family: $sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6, {
+	font-weight: normal;
+}
+
+a {
+	color: $link_color;
+}
+
+.hidden-fields,
+fieldset.hidden-fields {
+	display: none;
+}
+
+input,
+textarea {
+	font-family: $sans-serif;
+}
+
+/* 
+=============================================================================
+WEB FONTS
+========================================================================== */
+@font-face {
+	font-family: 'Roboto Slab';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Roboto Slab Regular'), local('RobotoSlab-Regular'), url(http://themes.googleusercontent.com/static/fonts/robotoslab/v3/y7lebkjgREBJK96VQi37ZrrIa-7acMAeDBVuclsi6Gc.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'Proxima Nova Regular';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Proxima Nova Regular'), local('ProximaNovaSoft-Regular');
+	src: url('/wp-content/themes/lsuxblog/fonts/ProximaNovaSoft-Regular-webfont.eot'); /* IE9 Compat Modes */
+	src: url('/wp-content/themes/lsuxblog/fonts/ProximaNovaSoft-Regular-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	     url('/wp-content/themes/lsuxblog/fonts/ProximaNovaSoft-Regular-webfont.woff') format('woff'), /* Modern Browsers */
+	     url('/wp-content/themes/lsuxblog/fonts/ProximaNovaSoft-Regular-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+	     url('/wp-content/themes/lsuxblog/fonts/ProximaNovaSoft-Regular-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+/* 
+=============================================================================
+MAIN SITE WRAPPER
+========================================================================== */
+.wrap {
+	@include rem-units(padding, 0, 1.5);
+	@include rem-units(max-width, 110);
+	@include clearfix;
+	margin: 0 auto;
+	@include respond-to(expansionA) {
+		@include rem-units(padding, 0, 4);
+	}
+	@include respond-to(expansionB) {
+		@include rem-units(padding, 0, 5);
+	}
+}
+
+/* 
+=============================================================================
+MAIN CONTENT
+========================================================================== */
+.main-content {
+	@include rem-units(padding, 7.5, 0);
+}
+
+/* 
+=============================================================================
+BUTTONS
+========================================================================== */
+.btn {
+	@include rem-units(border-radius, .2);
+	background: $button_color;
+	color: #fff;
+	padding: .75em 1.5em;
+	display: inline-block;
+	&.btn-transparent {
+		color: #fff;
+		background: transparent;
+		border: 1px solid;
+	}
+	&:hover, 
+	&:active {
+		text-decoration: none;
+	}
+}
+
+/* 
+=============================================================================
+FORMS
+========================================================================== */
+label.infield {
+	position: absolute;
+	left: -999999em;
+}
+
+/* 
+=============================================================================
+SHARE LINKS
+========================================================================== */
+.social-links {
+	&> li {
+		@include rem-units(margin-right, 1);
+		@include rem-units(margin-bottom, 1.6);
+		display: inline-block;
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+	a {
+		@include rem-units(font-size, 1.4);
+		&:before {
+			@include rem-units(padding, .5);
+			@include transition(all .2s linear);
+			border-radius: 50%;
+			color: #fff;
+		}
+		&.link:before {
+			background: $prince;
+		}
+		&.facebook:before {
+			background: $facebook_blue;
+		}
+		&.twitter:before {
+			background: $twitter_blue;
+		}
+		&.googleplus:before {
+			background: $googleplus_red;
+		}
+		&.dribbble:before {
+			background: $dribbble_pink;
+		}
+		&.instagram:before {
+			background: $instagram_blue;
+		}
+		&:hover {
+			text-decoration: none;
+		}
+		&:hover:before {
+			background: $link_color;
+			text-decoration: none;
+		}
+	}
+}

@@ -1,8 +1,13 @@
 /* Bring in the Bourbon, because you can never have enough Bourbon*/
 @import "bourbon/bourbon";
 
-/* Bring in the partils */
+/* Bring in the partials */
 @import "partials/reset";
+@import "partials/base";
 @import "partials/icon_font";
-@import "partials/nav";
+@import "partials/header";
+@import "partials/blog_posts";
 @import "partials/footer";
+
+/* CSS from Vender Plugins */
+@import "vender/prism";

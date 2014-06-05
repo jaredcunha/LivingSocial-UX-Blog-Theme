@@ -11,7 +11,7 @@
  */
  * {
     @include box-sizing(border-box);
-     *behavior: url(/js/plugins/boxsizing.htc);
+     *behavior: url(/wp-content/themes/lsuxblog/js/plugins/boxsizing.htc);
  }
 
 /**
@@ -78,6 +78,7 @@ html {
     -ms-text-size-adjust: 100%; /* 2 */
     -webkit-text-size-adjust: 100%; /* 2 */
     font-size: 62.5%;
+    -webkit-font-smoothing: antialiased;
 }
 
 /**
@@ -98,6 +99,7 @@ body {
 
 a {
     background: transparent;
+    text-decoration: none;
 }
 
 /**
@@ -115,6 +117,7 @@ a:focus {
 a:active,
 a:hover {
     outline: 0;
+    text-decoration: underline;
 }
 
 /* ==========================================================================
@@ -295,7 +298,7 @@ figure {
  */
 
 fieldset {
-    border: 1px solid #c0c0c0;
+    border: none;
     margin: 0;
     padding: 0;
 }
@@ -333,6 +336,10 @@ textarea {
 button,
 input {
     line-height: normal;
+}
+
+input[type="hidden"] {
+    display: none;
 }
 
 /**

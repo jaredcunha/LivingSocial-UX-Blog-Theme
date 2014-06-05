@@ -1,5 +1,9 @@
-<header>
-	<h1><a href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?></a></h1>
-	<?php bloginfo( 'description' ); ?>
-	<?php get_search_form(); ?>
+<header class="site-header">
+	<div class="wrap">
+		<h1 class="site-logo"><a href="<?php echo home_url(); ?>" title="<?php bloginfo( 'name' ); ?>"><?php include 'logo.php';?></a></h1>
+		<?php get_search_form(); ?>
+	</div>
 </header>
+
+
+

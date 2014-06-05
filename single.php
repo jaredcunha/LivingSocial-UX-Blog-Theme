@@ -11,23 +11,52 @@
 ?>
 <?php Starkers_Utilities::get_template_parts( array( 'parts/shared/html-header', 'parts/shared/header' ) ); ?>
 
-<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+<?php
+if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+	the_post_thumbnail('full', array('class' => 'post-featured-image'));
+}
+?>
 
-<article>
+<div class="main-content">
+	<div class="wrap">
+		<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
-	<h2><?php the_title(); ?></h2>
-	<time datetime="<?php the_time( 'Y-m-d' ); ?>" pubdate><?php the_date(); ?> <?php the_time(); ?></time> <?php comments_popup_link('Leave a Comment', '1 Comment', '% Comments'); ?>
-	<?php the_content(); ?>			
+		<article class="blog-post-full">
+			
+			<div class="post-main">
+				<div class="pub-info with-avatar">
+					<?php echo get_avatar( get_the_author_meta( 'ID' ), 83 ); ?>
+					<p class="pub-date"><time datetime="<?php the_time( 'Y-m-d' ); ?>" pubdate><?php the_time( 'F j, Y' ); ?></time></p>
+					<p class="byline">by <?php the_author_link(); ?></p>
+				</div>
 
-	<?php if ( get_the_author_meta( 'description' ) ) : ?>
-	<?php echo get_avatar( get_the_author_meta( 'user_email' ) ); ?>
-	<h3>About <?php echo get_the_author() ; ?></h3>
-	<?php the_author_meta( 'description' ); ?>
-	<?php endif; ?>
+				<h1 class="post-title"><?php the_title(); ?></h1>
+				<div class="post-content">
+					<?php the_content(); ?>
+				</div>
 
-	<?php comments_template( '', true ); ?>
+				<div class="comments">
+					<?php comments_template( '', true ); ?>
+				</div>
+				
+			</div>			
 
-</article>
-<?php endwhile; ?>
+			<footer class="post-supplement">
+				<div class="supplement supplement-minor share">
+					<?php include 'parts/shared/post_share.php';?>
+				</div>
+				<div class="supplement supplement-minor categories">
+					<h6>category</h6>
+					<?php the_category_valid(); ?>
+				</div>
+			</footer>
+
+		</article>
+
+		
+
+		<?php endwhile; ?>
+	</div>
+</div>
 
 <?php Starkers_Utilities::get_template_parts( array( 'parts/shared/footer','parts/shared/html-footer' ) ); ?>

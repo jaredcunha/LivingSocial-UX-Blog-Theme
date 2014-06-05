@@ -1,2 +1,92 @@
 @import "bourbon/bourbon";
 @import "modules/all";
+
+/* 
+=============================================================================
+THE FONT
+========================================================================== */
+@font-face {
+	font-family: 'Symbol Font';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Proxima Nova Regular'), local('ProximaNovaSoft-Regular');
+	src: url('/wp-content/themes/lsuxblog/fonts/uxblogicons-webfont.eot'); /* IE9 Compat Modes */
+	src: url('/wp-content/themes/lsuxblog/fonts/uxblogicons-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	     url('/wp-content/themes/lsuxblog/fonts/uxblogicons-webfont.woff') format('woff'), /* Modern Browsers */
+	     url('/wp-content/themes/lsuxblog/fonts/uxblogicons-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+	     url('/wp-content/themes/lsuxblog/fonts/uxblogicons-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+/* 
+=============================================================================
+FONT
+========================================================================== */
+/*Initial*/
+.ls-i:before {
+	@include rem_units(margin-right, .75);
+  	font-family: $symbol_font;
+  	font-weight: normal !important;
+  	speak: none;
+}
+
+/*Replace text completely*/
+.ls-i-replace {
+	text-indent: -999em;
+	display: inline-block;
+	position: relative;
+	min-width: 1em;
+	max-width: 1em;
+}
+
+.ls-i-replace:before {
+	position: absolute;
+	left: 0;
+	top: 0;
+	text-indent: 0;
+	margin-right: 0;
+}
+
+/*Characters*/
+.ls-i-twitter:before {
+  content: "a";
+}
+
+.ls-i-facebook:before {
+  content: "b";
+}
+
+.ls-i-dribbble:before {
+  content: "c";
+}
+
+.ls-i-flickr:before {
+  content: "d";
+}
+
+.ls-i-instagram:before {
+  content: "e";
+}
+
+.ls-i-github:before {
+  content: "f";
+}
+
+.ls-i-search:before {
+  content: "g";
+}
+
+.ls-i-googleplus:before {
+  content: "h";
+}
+
+.ls-i-link:before {
+  content: "i";
+}
+
+.ls-i-menu:before {
+  content: "j";
+}
+
+.ls-i-close:before {
+  content: "k";
+}

@@ -68,7 +68,47 @@
 
 		wp_register_style( 'screen', get_stylesheet_directory_uri().'/style.css', '', '', 'screen' );
         wp_enqueue_style( 'screen' );
-	}	
+	}
+
+	/* ========================================================================================================================
+	
+	AUTHOR CONTACTS
+	
+	======================================================================================================================== */
+	function author_spotlight_contactmethods( $contactmethods ) {
+		if ( !isset( $contactmethods['jobtitle'] ) )
+	        $contactmethods['jobtitle'] = 'Job Title';
+	    if ( !isset( $contactmethods['dribbble'] ) )
+	        $contactmethods['dribbble'] = 'Dribbble';
+	    if ( !isset( $contactmethods['flickr'] ) )
+	        $contactmethods['flickr'] = 'Flickr';    
+	    if ( !isset( $contactmethods['tumblr'] ) )
+	        $contactmethods['tumblr'] = 'Tumblr';   
+	    if ( !isset( $contactmethods['instagram'] ) )
+	        $contactmethods['instagram'] = 'Instagram';             
+	    return $contactmethods;
+	}
+
+	add_filter('user_contactmethods','author_spotlight_contactmethods');	
+
+	/* ========================================================================================================================
+	
+	CUSTOM CATEGORIES
+	
+	======================================================================================================================== */
+	function the_category_valid() {
+ 	  $categories = get_the_category();
+	  $separator = ', ';
+	  $output = '';
+	  if($categories){
+	  	  echo '<ul class="post-categories">';
+		  foreach($categories as $category) {
+			  $output .= '<li><a href="'.get_category_link($category->term_id ).'" title="' . esc_attr( sprintf( __( "View all posts in %s" ), $category->name ) ) . '" class="btn">'.$category->cat_name.'</a></li>';
+		  }
+		  echo trim($output, $separator);
+		  echo '</ul>';
+	  }
+	}
 
 	/* ========================================================================================================================
 	

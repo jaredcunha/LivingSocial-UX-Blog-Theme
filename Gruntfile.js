@@ -4,22 +4,6 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
-        concat: {   
-            dist: {
-                src: [
-                    'js/libs/*.js', // All JS in the libs folder
-                ],
-                dest: 'js/build/global.js',
-            }
-        },
-
-        uglify: {
-            build: {
-                src: 'js/build/global.js',
-                dest: 'js/build/global.min.js'
-            }
-        }, 
-
         imagemin: {
             dynamic: {
                 files: [{
@@ -36,14 +20,14 @@ module.exports = function(grunt) {
                 livereload: true,
             },
             css: {
-                files: 'css/scss/global.scss',
+                files: '**/*.scss',
                 tasks: ['sass'],
                 options: {
                     spawn: false,
                 }
             }, 
             scripts: {
-                files: ['js/*.js'],
+                files: ['js/**/*.js'],
                 tasks: ['concat', 'uglify'],
                 options: {
                     spawn: false,
@@ -58,6 +42,22 @@ module.exports = function(grunt) {
                 }
             }    
         },
+
+        concat: {   
+            dist: {
+                src: [
+                    'js/libs/*.js', 'js/plugins/*.js', 'js/scripts/*.js' // All JS in the libs folder
+                ],
+                dest: 'js/build/global.js',
+            }
+        },
+
+        uglify: {
+            build: {
+                src: 'js/build/global.js',
+                dest: 'js/build/global.min.js'
+            }
+        }, 
 
         sass: {
             dist: {
