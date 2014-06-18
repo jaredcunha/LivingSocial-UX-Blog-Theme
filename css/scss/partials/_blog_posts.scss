@@ -10,6 +10,7 @@ FULL BLOG POST
 }
 
 .post-main {
+	@include rem_units(margin-bottom, 5);
 	@include respond-to(expansionB) {
 		float: right;
 		width: $grid_10of12cols + $gutterWidth;
@@ -17,6 +18,7 @@ FULL BLOG POST
 		padding-right: $gutterWidth;
 		border-left: 1px solid $border_grey;
 		position: relative;
+		margin-bottom: 0;
 	}
 	&:after {
 		@include respond-to(expansionB) {
@@ -34,14 +36,22 @@ FULL BLOG POST
 
 /*Post Supplements*/
 .post-supplement {
+	@include rem_units(padding, 0, $gutterWidth);
+	background: rgba(0,0,0,.05);
+	border-radius: 4px;
 	@include respond-to(expansionB) {
 		float: left;
 		width: $grid_2of12cols;
+		padding: 0;
+		border-radius: 0;
+		background: transparent;
 	}
 	.supplement {
-		@include rem_units(padding-top, 2);
-		@include rem_units(padding-bottom, 2);
+		@include rem_units(padding-top, 1);
+		@include rem_units(padding-bottom, 1);
 		@include respond-to(expansionB) {
+			@include rem_units(padding-top, 2);
+			@include rem_units(padding-bottom, 2);
 			padding-right: $gutterWidth;
 		}
 		&:first-child {
@@ -54,6 +64,21 @@ FULL BLOG POST
 		@include rem_units(font-size, 1.2);
 		@include rem_units(margin-bottom, 1);
 		color: $small_heading_color;
+	}
+	.social-links 
+		> li {
+			@include rem-units(margin-right, 3);
+			@include respond-to(expansionB) {
+				@include rem-units(margin-right, 1);
+			}
+			a:before {
+				@include rem-units(font-size, 2.5);
+				@include rem-units(padding, 1);
+				@include respond-to(expansionB) {
+					@include rem-units(font-size, 1.4);
+					@include rem-units(padding, .5);
+				}
+			}
 	}
 }
 
@@ -125,7 +150,7 @@ WHEN ITEMS APPEAR IN A FEED
 ========================================================================== */
 .blogs-list {
 	.blog-post-item {
-		@include rem_units(margin-top, 2.5);
+		@include rem_units(margin-top, 7.5);
 		@include rem_units(padding-top, 2.5);
 		border-top: 1px solid $border_grey;
 		&:first-child {
@@ -174,27 +199,46 @@ BYLINE AND TIMESTAMPS
 		color: $headings_light;
 	}
 	.avatar {
-		@include rem_units(margin-right, 1.7);
-		@include image_box_shadow;
+		@include rem_units(margin-right, .5);
+		@include rem_units(width, 5);
+		height: auto;
 		float: left;
+		@include respond-to(expansionA) {
+			@include rem_units(width, 8.3);
+			@include rem_units(margin-right, 1.7);
+			@include image_box_shadow;
+		}
 	}
 	.byline {
 		@include rem_units(font-size, 1.4);
 	}
 	&.with-avatar .pub-date {
-		@include rem_units(padding-top, 1.6);
+		@include rem_units(padding-top, .3);
+		@include respond-to(expansionA) {
+			@include rem_units(padding-top, 1.6);
+		}
 	}
 }
 
 .post-main .pub-info {
-	@include rem_units(margin-bottom, 3.5);
+	@include rem_units(padding-bottom, 1.75);
+	@include rem_units(margin-bottom, 1.75);
+	border-bottom: 1px solid white;
+	@include respond-to(expansionB) {
+		@include rem_units(padding-bottom, 3.5);
+		border: none;
+		margin-bottom: 0;
+	}
 }
 
 /* User photo */ 
 .avatar {
 	display: block;
 	border-radius: 50%;
-	border: 3px solid white;	
+	border: 2px solid white;
+	@include respond-to(expansionA) {
+		border-width: 3px;
+	}
 }
 
 /* 

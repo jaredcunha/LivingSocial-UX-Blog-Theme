@@ -32,7 +32,7 @@
 						<h2 class="post-title"><a href="<?php esc_url( the_permalink() ); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 						
 						<div class="post-content">
-							<?php the_content('read full post →'); ?>
+							<?php the_excerpt('read full post →'); ?>
 						</div>
 					</div>
 					<footer class="post-supplement">
