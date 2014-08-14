@@ -1,23 +1,25 @@
-/* ===============================
-    Grid based on the 960 grid
-    Gutters: 20px;
-    Width of 12 columns: 940px;
-==================================*/
+/* Caculate the end grid details */
+$gutterWidthPx: 43;
+$columnWidthPx: 55;
+$gridWidthPx: 1140;
 
-/* Gutter */
-$gutterWidth: 		  2.127659574%;
+@function calc-cols($target) {
+  @return 100% * (($target * $columnWidthPx) + (($target - 1) * $gutterWidthPx)) / $gridWidthPx;
+}
 
-/* Grid Columns */
-$grid_1of12cols: 	  6.382978723%;
-$grid_2of12cols:  	 14.893617021%;
-$grid_3of12cols: 	 23.404255319%;
-$grid_4of12cols: 	 31.914893617%;
-$grid_5of12cols: 	 40.425531914%;
-$grid_6of12cols: 	 48.936170212%;
-$grid_7of12cols: 	 57.446808510%;
-$grid_8of12cols: 	 65.957446808%;
-$grid_9of12cols: 	 74.468085106%;
-$grid_10of12cols: 	 82.978723404%;
-$grid_11of12cols: 	 91.489361702%;
-$grid_12of12cols: 	100%;
+/* Caculate the gutter */
+$gutterWidth: 100% * $gutterWidthPx / $gridWidthPx;
 
+/* Calculate the column widths (12 columns) */
+$grid_1of12cols: calc-cols(1);
+$grid_2of12cols: calc-cols(2);
+$grid_3of12cols: calc-cols(3);
+$grid_4of12cols: calc-cols(4);
+$grid_5of12cols: calc-cols(5);
+$grid_6of12cols: calc-cols(6);
+$grid_7of12cols: calc-cols(7);
+$grid_8of12cols: calc-cols(8);
+$grid_9of12cols: calc-cols(9);
+$grid_10of12cols: calc-cols(10);
+$grid_11of12cols: calc-cols(11);
+$grid_12of12cols: calc-cols(12);

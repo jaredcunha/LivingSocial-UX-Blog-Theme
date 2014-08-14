@@ -80,7 +80,7 @@ MAIN CONTENT
 .main-content {
 	@include rem-units(padding, 2.5, 0);
 	@include respond-to(expansionA) {
-		@include rem-units(padding, .5, 0);
+		@include rem-units(padding, 5, 0);
 	}
 	@include respond-to(expansionB) {
 		@include rem-units(padding, 7.5, 0);
