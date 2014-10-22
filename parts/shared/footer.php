@@ -2,7 +2,7 @@
 		<div class="wrap">
 			<div class="footer-cols">
 				<div class="col">
-					<?php echo do_shortcode('[block id="1"]');?>
+					<h4><?php echo do_shortcode('[block id="1"]');?></h4>
 					<?php echo do_shortcode('[block id="2"]');?>
 				</div>
 				<div class="col">
@@ -12,12 +12,12 @@
 					</ul>
 				</div>
 				<div class="col col-sm">
-					<?php echo do_shortcode('[block id="3"]');?>
+					<h4><?php echo do_shortcode('[block id="3"]');?></h4>
 					<?php echo do_shortcode('[block id="4"]');?>
 				</div>
 			</div>
 			<p class="action-buttons">
-				<a href="#" class="btn btn-transparent">
+				<a href="https://dribbble.com/LivingSocial" class="btn btn-transparent">
 					View Our Work on Dribbble!
 				</a>
 			</p>
