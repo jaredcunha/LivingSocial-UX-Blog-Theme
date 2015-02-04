@@ -1,0 +1,19 @@
+@import 'bourbon/bourbon';
+
+@include keyframes(bounceIn) {
+  from {
+    @include transform(scale(0));
+  }
+  to {
+    @include transform(scale(1));
+  }
+}
+
+@include keyframes(slideUp) {
+  from {
+    @include transform(translate3d(0,100%,0));
+  }
+  to {
+    @include transform(translate3d(0,0,0));
+  }
+}

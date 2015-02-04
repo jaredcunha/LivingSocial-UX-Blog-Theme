@@ -1,0 +1,16 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="23.499px" height="93.066px" viewBox="0 0 23.499 93.066" enable-background="new 0 0 23.499 93.066" xml:space="preserve">
+<g>
+	<polygon fill="#666666" stroke="#FFFFFF" stroke-width="1.7873" stroke-linejoin="round" stroke-miterlimit="10" points="
+		22.447,28.077 11.724,1.269 1,28.077 3.755,27.481 6.362,28.077 9.006,27.481 11.724,28.077 14.367,27.481 17.123,28.077 
+		19.802,27.481 	"/>
+	<polygon fill="#666666" stroke="#FFFFFF" stroke-width="1.7873" stroke-linejoin="round" stroke-miterlimit="10" points="
+		8.159,10.179 15.289,10.179 11.724,1.269 	"/>
+	<polyline fill="#666666" stroke="#FFFFFF" stroke-width="1.7873" stroke-linejoin="round" stroke-miterlimit="10" points="
+		1,28.077 1,91.008 22.447,91.008 22.447,28.077 	"/>
+	
+		<line fill="#666666" stroke="#FFFFFF" stroke-width="1.7873" stroke-linejoin="round" stroke-miterlimit="10" x1="6.362" y1="28.077" x2="6.362" y2="91.008"/>
+	
+		<line fill="#666666" stroke="#FFFFFF" stroke-width="1.7873" stroke-linejoin="round" stroke-miterlimit="10" x1="17.123" y1="28.077" x2="17.085" y2="91.008"/>
+</g>
+</svg>

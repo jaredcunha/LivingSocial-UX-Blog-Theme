@@ -1,0 +1,42 @@
+@import 'bourbon/bourbon';
+
+/* ==========================================================================
+   MEDIA QUERIES
+   ========================================================================== */
+@mixin respond-to($media) {
+  @if $media == expansionA {
+    @media only screen and (min-width: 610px) { @content; }
+  }
+  @else if $media == expansionB {
+    @media only screen and (min-width: 860px) { @content; }
+  }
+}
+
+@mixin retina($image, $width, $height) {
+  @media print,
+         (-webkit-min-device-pixel-ratio: 1.25),
+         (-o-min-device-pixel-ratio: 5/4),
+         (min-resolution: 120dpi) { 
+    background-image: url($image);
+    background-size: $width $height;
+  }
+}
+
+/* ==========================================================================
+   VARS
+   ========================================================================== */
+/* Width Values */
+$gutterWidth: 2.127659574%;
+$width4col: 31.914893617%;
+$width6col: 48.936170212%;
+$width7col: 57.44680851%;
+$width8col: 65.957446808%;
+$width9col: 74.468085106%;
+$width10col: 82.978723404%;
+
+/* Colors */
+$strawberry: #e93e3c;
+$greyDark: #333333;
+$greyMed: #666666;
+$greyLight: #cccccc;
+$slushie: #5fb8dd;
