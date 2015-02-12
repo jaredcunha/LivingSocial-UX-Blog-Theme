@@ -39,27 +39,27 @@
 
 				<ul class="social-links">
 					<?php global $user_ID; if ( get_the_author_meta('user_url',$user_ID) ) :?>
-				  	<li><a class="ls-i ls-i-link link" href="<?php the_author_meta('user_url',$user_ID); ?>">website</a></li>
+				  	<li><a class="ls-i ls-i-link link" href="<?php the_author_meta('user_url'); ?>">website</a></li>
 					<?php endif; ?>
 
 					<?php global $user_ID; if ( get_the_author_meta('twitter',$user_ID) ) :?>
-				  	<li><a class="ls-i ls-i-twitter twitter" href="<?php the_author_meta('twitter',$user_ID); ?>">@<?php the_author_meta('twitter',$user_ID); ?></a></li>
+				  	<li><a class="ls-i ls-i-twitter twitter" href="<?php the_author_meta('twitter'); ?>">twitter</a></li>
 					<?php endif; ?>
 
 					<?php global $user_ID; if ( get_the_author_meta('facebook',$user_ID) ) :?>
-					<li><a class="ls-i ls-i-facebook facebook" href="<?php the_author_meta('facebook',$user_ID); ?>">facebook</a></li>
+					<li><a class="ls-i ls-i-facebook facebook" href="<?php the_author_meta('facebook'); ?>">facebook</a></li>
 					<?php endif; ?>
 
 					<?php global $user_ID; if ( get_the_author_meta('googleplus',$user_ID) ) :?>
-					<li><a class="ls-i ls-i-googleplus googleplus" href="<?php the_author_meta('googleplus',$user_ID); ?>">google+</a></li>
+					<li><a class="ls-i ls-i-googleplus googleplus" href="<?php the_author_meta('googleplus'); ?>">google+</a></li>
 					<?php endif; ?>
 
 					<?php global $user_ID; if ( get_the_author_meta('dribbble',$user_ID) ) :?>
-					<li><a class="ls-i ls-i-dribbble dribbble" href="<?php the_author_meta('dribbble',$user_ID); ?>">dribbble</a></li>
+					<li><a class="ls-i ls-i-dribbble dribbble" href="<?php the_author_meta('dribbble'); ?>">dribbble</a></li>
 					<?php endif; ?>
 
 					<?php global $user_ID; if ( get_the_author_meta('instagram',$user_ID) ) :?>
-					<li><a class="ls-i ls-i-instagram instagram" href="<?php the_author_meta('instagram',$user_ID); ?>">instagram</a></li>
+					<li><a class="ls-i ls-i-instagram instagram" href="<?php the_author_meta('instagram'); ?>">instagram</a></li>
 					<?php endif; ?>
 				</ul>
 			</div>

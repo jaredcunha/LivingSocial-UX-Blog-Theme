@@ -6,7 +6,8 @@
 BASE ELEMENTS
 ========================================================================== */
 body {
-	background: $background_grey;
+	background: $background_grey url("/wp-content/themes/lsuxblog/images/bg-gray.png");
+	background-size: 300px 300px;
 	font-family: $sans-serif;
 }
 
